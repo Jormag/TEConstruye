@@ -1,7 +1,6 @@
 Create Database TEConstruye
 Go 
 
-
 -- Creación de la tabla Especialidad
 Create Table Especialidad(
 IDEspecialidad int Identity Primary Key Not Null,
@@ -119,7 +118,7 @@ Go
 Create Table EmpleadoProyecto (
 IDEmpleado int,
 IDObra int,
-Horas int,
+Horas int
 )
 Go
 
@@ -128,9 +127,7 @@ Create Table Gasto (
 IDObra int Not Null,
 IDProveedor int,
 IDFactura int,
-Foto image,
-
-
+Foto image
 )
 Go
 
