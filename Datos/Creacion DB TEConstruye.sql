@@ -1,26 +1,26 @@
 Create Database TEConstruye
 Go 
 
--- Creaci髇 de la tabla Especialidad
+-- Creaci贸n de la tabla Especialidad
 Create Table Especialidad(
 IDEspecialidad int Identity Primary Key Not Null,
 TipoEspecialidad Varchar(20)
 )
 Go
 
--- Creaci髇 de la tabla Ingeniero
+-- Creaci贸n de la tabla Ingeniero
 Create Table Ingeniero (
-Cedula int Primary Key Not Null,
+Cedula int Not Null,
 Nombre Varchar(20) Not Null,
 Apellido1 Varchar(20) Not Null,
 Apellido2 Varchar(20) Not Null,
 IDEspecialidad int Not Null,
 Telefono int Not Null,
-Codigo int Not Null
+Codigo Primary Key int Not Null
 )
 Go
 
--- Creaci髇 de la tabla Cliente
+-- Creaci贸n de la tabla Cliente
 Create Table Cliente (
 Cedula int Primary Key Not Null,
 Nombre Varchar(20) Not Null,
@@ -30,7 +30,7 @@ Telefono int Not Null
 )
 Go
 
--- Creaci髇 de la tabla Empleado
+-- Creaci贸n de la tabla Empleado
 Create Table Empleado (
 Cedula int Primary Key Not Null,
 Nombre Varchar(20) Not Null,
@@ -42,7 +42,7 @@ PagoHora int Not Null
 )
 Go
 
--- Creaci髇 de la tabla Material
+-- Creaci贸n de la tabla Material
 Create Table Material (
 Codigo int Primary Key Not Null,
 Nombre Varchar(30) Not Null,
@@ -50,7 +50,7 @@ PrecioUnitario int Not Null
 )
 Go
 
--- Creaci髇 de la tabla Etapa
+-- Creaci贸n de la tabla Etapa
 Create Table Etapa (
 IDEtapa int Identity Primary Key Not Null,
 IDObra int not null,
@@ -78,7 +78,7 @@ Escaleras int
 )
 Go
 
--- Creaci髇 de la tabla Ubicacion
+-- Creaci贸n de la tabla Ubicacion
 Create Table Ubicacion(
 IDUbicacion int Identity Primary Key Not Null,
 Provincia Varchar(20) Not Null,
@@ -87,13 +87,13 @@ Distrito Varchar(50) Not Null
 )
 Go
 
--- Creaci髇 de la tabla Obra
+-- Creaci贸n de la tabla Obra
 Create Table Obra (
 IDObra int Identity Primary Key Not Null,
 Nombre Varchar(30) Not Null,
 IDUbicacion int Not Null,
 Habitaciones int Not Null,
-Ba駉s int Not Null,
+Ba帽os int Not Null,
 Pisos int Not Null,
 MetrosCuadradosConstruccion int Not Null,
 MetrosCuadradosLote int Not Null,
@@ -104,7 +104,7 @@ IDCliente int Not Null
 )
 Go
 
--- Creaci髇 de la tabla  ObraMateriales
+-- Creaci贸n de la tabla  ObraMateriales
 Create Table ObraMateriales (
 IDObraMateriales int Identity Primary Key Not Null,
 IDObra int Not Null,
@@ -114,7 +114,7 @@ Cantidad int
 )
 Go
 
--- Creaci髇 de la tabla EtapaProyecto
+-- Creaci贸n de la tabla EtapaProyecto
 Create Table EtapaProyecto (
 IDEtapaProyecto int Identity Primary Key Not Null,
 IDObra int Not Null,
@@ -125,7 +125,7 @@ Presupuesto int
 )
 Go
 
--- Creaci髇 de la tabla EmpleadoProyecto
+-- Creaci贸n de la tabla EmpleadoProyecto
 Create Table EmpleadoProyecto (
 IDEmpleadoProyecto int Identity Primary Key Not Null,
 IDEmpleado int Not Null,
@@ -134,17 +134,17 @@ Horas int Not Null
 )
 Go
 
--- Creaci髇 de la tabla Gasto
+-- Creaci贸n de la tabla Gasto
 Create Table Gasto (
 IDGasto int Identity Primary Key Not Null,
 IDObra int Not Null,
 IDProveedor int,
 IDFactura int,
-Foto image
+Foto varchar(100)
 )
 Go
 
--- Creaci髇 de la tabla CompraMateriales
+-- Creaci贸n de la tabla CompraMateriales
 Create Table CompraMateriales (
 IDCompraMateriales int Identity Primary Key Not Null,
 Factura int,
@@ -160,8 +160,7 @@ ADD CONSTRAINT FK_Ingeniero_Especialidad FOREIGN KEY (IDEspecialidad) REFERENCES
 ALTER TABLE  Obra
 ADD CONSTRAINT FK_Obra_Ubicacion FOREIGN KEY (IDUbicacion) REFERENCES Ubicacion(IDUbicacion),
 	CONSTRAINT FK_Obra_Cliente FOREIGN KEY (IDCliente) REFERENCES Cliente(Cedula),
-	CONSTRAINT FK_Obra_Ingeniero FOREIGN KEY (IDIngeniero1) REFERENCES Ingeniero(Cedula)
-	--Esta puede cambiar si se decide usar el codigo en lugar de la cedula
+	CONSTRAINT FK_Obra_Ingeniero FOREIGN KEY (IDIngeniero) REFERENCES Ingeniero(Codigo)
 
 ALTER TABLE  Etapa
 ADD CONSTRAINT FK_Etapa_Obra FOREIGN KEY (IDObra) REFERENCES Obra(IDObra)
