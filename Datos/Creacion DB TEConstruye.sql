@@ -160,7 +160,7 @@ ADD CONSTRAINT FK_Ingeniero_Especialidad FOREIGN KEY (IDEspecialidad) REFERENCES
 ALTER TABLE  Obra
 ADD CONSTRAINT FK_Obra_Ubicacion FOREIGN KEY (IDUbicacion) REFERENCES Ubicacion(IDUbicacion),
 	CONSTRAINT FK_Obra_Cliente FOREIGN KEY (IDCliente) REFERENCES Cliente(Cedula),
-	CONSTRAINT FK_Obra_Ingeniero FOREIGN KEY (IDIngeniero) REFERENCES Ingeniero(Codigo)
+	CONSTRAINT FK_Obra_Ingeniero FOREIGN KEY (IDIngeniero1) REFERENCES Ingeniero(Codigo)
 
 ALTER TABLE  Etapa
 ADD CONSTRAINT FK_Etapa_Obra FOREIGN KEY (IDObra) REFERENCES Obra(IDObra)
