@@ -10,71 +10,47 @@ Go
 
 -- Creación de la tabla Ingeniero
 Create Table Ingeniero (
+Cedula int Identity Primary Key Not Null,
 Nombre Varchar(20) Not Null,
 Apellido1 Varchar(20) Not Null,
 Apellido2 Varchar(20) Not Null,
 Especialidad int Not Null,
-Cedula int Identity Primary Key Not Null,
 Telefono int Not Null,
 Codigo int Not Null
 )
 Go
 
--- Creación de la tabla Cliente
-Create Table Cliente (
+-- Creación de la tabla 
+Cedula int Identity Primary Key Not Null,
 Nombre Varchar(20) Not Null,
 Apellido1 Varchar(20) Not Null,
 Apellido2 Varchar(20) Not Null,
-Cedula int Identity Primary Key Not Null,
 Telefono int Not Null
 )
 Go
 
 -- Creación de la tabla Empleado
 Create Table Empleado (
+Cedula int Identity Primary Key Not Null,
 Nombre Varchar(20) Not Null,
 Apellido1 Varchar(20) Not Null,
 Apellido2 Varchar(20) Not Null,
-Cedula int Identity Primary Key Not Null,
-Telefono int Not Null,
-PagoHora int Not Null
---HorasLaboradas int Not Null
+Telefono int Not Null
 )
 Go
 
 -- Creación de la tabla Material
 Create Table Material (
-Nombre Varchar(30) Not Null,
 Codigo int Identity Primary Key Not Null,
-PrecioUnitario int Not Null
+Nombre Varchar(30) Not Null,
 )
 Go
 
 -- Creación de la tabla Etapa
 Create Table Etapa (
-IDObra int not null,
 IDEtapa int Identity Primary Key Not Null,
-Descripcion Varchar(200) Not Null,
-TrabajoPreliminar int,
-Cimiento int,
-Paredes int,
-ConcretoReforzado int,
-Techos int,
-Cielos int,
-Repello int,
-Entrepisos int,
-Pisos int,
-Enchapes int,
-InstalacionPluvial int,
-InstalacionSanitaria int,
-InstalacionElectrica int,
-Puertas int,
-Cerrajeria int,
-Ventanas int,
-Closets int,
-MuebleCocina int,
-Pintura int,
-Escaleras int
+IDObra int not null,
+Descripcion Varchar(200) Not Null
 )
 Go
 
