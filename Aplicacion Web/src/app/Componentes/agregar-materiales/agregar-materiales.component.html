@@ -1,0 +1,42 @@
+<!--Vista para Añadir Compras-->
+<div class="split left">
+  <div class="centered">
+    <!--Encabezado de la Pagina-->
+    <h2>Añadir Materiales</h2>
+    <img class="center"  alt="Responsive image" style="width:300px;height:300px;" src="../../../assets/imagenes/Materiales.png">
+  </div>
+</div>
+
+<div class="split right">
+<div class="container">
+    <form #MaterialAdd='ngForm' (ngSubmit)="Register(MaterialAdd)">
+      <div class="form-group input-group-lg">
+        <!--Contenedor para Ingresar Nombre Material-->
+        <label for="Nmaterial"><b>Nombre Material</b>:</label>
+        <input  placeholder="Nombre Material" name="NombreMaterial" [(ngModel)]='objmat.NombreMaterial' #NomobreMaterial="ngModel">
+      </div>
+    
+      <div class="form-group input-group-lg">
+        <!--Contenedor para Ingresar Código-->
+        <label for="Codigo"><b>Código</b>:</label>
+        <input  placeholder="Código" name="Codigo" [(ngModel)]='objmat.Codigo' #Codigo="ngModel">
+      </div>
+  
+      <div class="form-group input-group-lg">
+        <!--Contenedor para Ingresar Precio Unitario-->
+        <label for="Punitario"><b>Precio Unitario</b>:</label>
+        <input placeholder="Precio Unitario" name="PUnitario" [(ngModel)]='objmat.PUnitario' #PUnitario="ngModel">
+      </div>
+  
+      <!--<div class="form-group input-group-lg">
+        <!--Contenedor para Ingresar Cantidad
+        <label for="Cantidad"><b>Cantidad</b>:</label>
+        <input placeholder="Cantidad" name="Cantidad" [(ngModel)]='objmat.Cantidad' #Cantidad="ngModel">
+      </div>-->
+    </form>
+      <!--Boton para Añadir-->
+      <button type="submit" class="btn btn-success" (click)="Register(MaterialAdd)" >Añadir</button>
+    
+  </div>
+  
+</div>

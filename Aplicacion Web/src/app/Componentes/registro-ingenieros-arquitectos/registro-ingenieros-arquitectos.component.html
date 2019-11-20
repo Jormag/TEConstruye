@@ -1,0 +1,38 @@
+<div class="col-md-12 user-container">
+    <!--Encabezado Vista-->
+    <h2 style="margin: auto; padding: 10px"> Ingenieros/Arquitectos</h2>
+    <button class="btn btn-danger" style="width:100px; margin: 15px; float:right" [routerLink]="'/agregaringenieros'">Agregar</button>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th></th>
+        
+        <!--División de la Tabla-->
+        <th class="hidden">Nombre</th>
+        <th>Primer Apellido</th>
+        <th>Segundo Apellido</th>
+        <th>Especialidad</th>
+        <th>Cédula</th>
+        <th>Telefono</th>
+        <th></th>
+        
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users">
+        <td class="hidden"></td>
+        <!--Informacion Tabla-->
+        
+        <td>{{user.Nombre}}</td>
+        <td>{{user.Apellido1}}</td>
+        <td>{{user.Apellido2}}</td>
+        <td>{{user.Especialidad}}</td>
+        <td>{{user.Cedula}}</td>
+        <td>{{user.Telefono}}</td>
+        
+        <td><button class="btn btn-success" > Eliminar</button>
+          <!--<button class="btn btn-success" style="margin-left: 20px;"> Editar</button></td>-->
+      </tr>
+      </tbody>
+    </table>
+  </div>
