@@ -117,7 +117,7 @@ Go
 -- Creacion de llaves foraneas
 -- Creacion de las FK de la tabla Ingeniero
 ALTER TABLE  Ingeniero
-ADD CONSTRAINT FK_Ingeniero_Especialidad FOREIGN KEY (IDEspecialidad) REFERENCES Especialidad(IDEspecialidad);
+ADD CONSTRAINT FK_Ingeniero_Especialidad FOREIGN KEY (Especialidad) REFERENCES Especialidad(IDEspecialidad);
 
 -- Creacion de las FK de la tabla Obra
 ALTER TABLE  Obra
