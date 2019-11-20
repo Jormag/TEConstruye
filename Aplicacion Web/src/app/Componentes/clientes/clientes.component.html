@@ -1,0 +1,51 @@
+<div class="col-md-12 user-container">
+  <!--Encabezado Vista-->
+  <h2 style="margin: auto; padding: 10px"> Clientes</h2>
+  <button class="btn btn-danger" style="width:100px; margin: 15px; float:right"[routerLink]="'/agregarclientes'"> Agregar</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      
+      <!--Division de la Tabla-->
+      <th class="hidden">Cédula</th>
+      <th>Nombre</th>
+      <th>Primer Apellido</th>
+      <th>Segundo Apellido</th>
+      <th>Telefono</th>
+      <th>FNac</th>
+      <th>Naci</th>
+      <th>UbiU</th>
+      <th>Ing</th>
+      <th>Ocup</th>
+      <th>Correo</th>
+      <th>Perfil</th>
+      <th>Usua</th>
+      
+      
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      
+      
+      <!--Informacion de la Tabla-->
+      <td>{{user.Cedula}}</td>
+      <td>{{user.Nombre}}</td>
+      <td>{{user.Apellido1}}</td>
+      <td>{{user.Apellido2}}</td>
+      <td>{{user.Telefono}}</td>
+      <td>{{user.FechaNacimiento}}</td>
+      <td>{{user.Nacionalidad}}</td>
+      <td>{{user.UbicacionUsuario}}</td>
+      <td>{{user.Ingresos}}</td>
+      <td>{{user.Ocupacion}}</td>
+      <td>{{user.Correo}}</td>
+      <td>{{user.Perfil}}</td>
+      <td>{{user.Usuario}}</td>
+      
+        <td><button class="btn btn-success" > Eliminar</button>
+        <!--<button class="btn btn-success" style="margin-left: 20px;"> Editar</button></td>-->
+    </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,30 @@
+<div class="col-md-12 user-container">
+  <!--Encabezado Vista-->
+  <h2 style="margin: auto; padding: 10px"> Materiales </h2>
+  <button class="btn btn-danger" style="width:100px; margin: 15px; float:right"[routerLink]="'/agregarmateriales'"> Agregar</button>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th></th>
+      <!--Division de la Tabla-->
+      <th class="hidden">Material</th>
+      <th>Código</th>
+      <th>Precio Unitario</th>
+      
+            
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users">
+      <td class="hidden"></td>
+      <!--Informacion de la Tabla-->
+      <td>{{user.Nombre}}</td>
+      <td>{{user.Codigo}}</td>
+      <td>{{user.PrecioUnitario}}</td>
+      
+        <td><button type="button" class="btn btn-success" > Eliminar</button></td>
+        <td><button class="btn btn-success" style="margin-left: 20px;" (click)="getIndividual(user.Codigo)"> Editar</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
