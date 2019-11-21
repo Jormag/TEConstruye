@@ -1,6 +1,8 @@
 --Create Database TEConstruye
 --Go 
 
+
+--CREACIÓN DE TABLAS
 -- Creación de la tabla Especialidad
 Create Table Especialidad(
 IDEspecialidad int Identity Primary Key Not Null,
@@ -148,6 +150,53 @@ Estado bit Default 0
 Go
 
 
+-- CREACIÓN DE LLAVES FORÁNEAS
+-- Creacion de las FK de la tabla Ingeniero
+ALTER TABLE  Ingeniero
+Add Constraint FK_Ingeniero_Especialidad Foreign Key (Especialidad) References Especialidad(IDEspecialidad);
+
+-- Creacion de las FK de la tabla Obra
+ALTER TABLE  Obra
+Add Constraint FK_Obra_Ubicacion Foreign Key (Ubicacion) References Ubicacion(IDUbicacion),
+	Constraint  FK_Obra_Cliente Foreign Key (IDCliente) References Cliente(Cedula),
+	Constraint  FK_Obra_Ingeniero1 Foreign Key (IDIngeniero1) References Ingeniero(Codigo),
+	Constraint  FK_Obra_Ingeniero2 Foreign Key (IDIngeniero2) References Ingeniero(Codigo),
+	Constraint  FK_Obra_Ingeniero3 Foreign Key (IDIngeniero3) References Ingeniero(Codigo);
+
+-- Creacion de las FK de la tabla EtapaObra
+ALTER TABLE  EtapaObra
+Add Constraint FK_EtapaObra_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_EtapaObra_Etapa Foreign Key (IDEtapa) References Etapa(IDEtapa);
+
+-- Creacion de las FK de la tabla EtapaMateriales
+ALTER TABLE  ObraMateriales
+Add Constraint FK_ObraMateriales_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_ObraMateriales_Etapa Foreign Key (IDEtapa) References Etapa(IDEtapa),
+	Constraint  FK_ObraMateriales_Material Foreign Key (IDMaterial) References Material(Codigo);
+
+-- Creacion de las FK de la tabla EmpleadoObra
+ALTER TABLE  EmpleadoObra
+Add Constraint FK_EmpleadoObra_Empleado Foreign Key (IDEmpleado) References Empleado(Cedula),
+	Constraint  FK_EmpleadoObra_Obra Foreign Key (IDObra) References Obra(IDObra);
+
+
+
+
+-- Creacion de las FK de la tabla Gasto
+ALTER TABLE  Gasto 
+Add Constraint FK_Gasto_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_Gasto_Factura Foreign Key (IDFactura) References Factura(IDFactura);
+
+
+-- Creacion de las FK de la tabla Factura
+ALTER TABLE  Factura 
+Add Constraint FK_Factura_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_Factura_Etapa Foreign Key (IDEtapa) References Etapa(IDEtapa);
+
+	-- Creacion de las FK de la tabla DetalleFactura
+ALTER TABLE DetalleFactura
+Add Constraint FK_Factura_Factura Foreign Key (IDFactura) References Factura(IDFactura),
+  Constraint FK_Producto_Factura Foreign Key (IDProducto) References Material(Codigo) ;
 
 
 
