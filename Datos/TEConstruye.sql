@@ -91,11 +91,12 @@ IDEtapa int Not Null,
 FechaInicio date Not Null,
 FechaFin date,
 Presupuesto money Not Null,
-GastoEtapa money Not Null,
-Descripcion Varchar(200) Not Null,
+GastoEtapa money ,
+Descripcion Varchar(200),
 Primary Key (IDObra,IDEtapa)
 )
 Go
+
 
 -- Creación de la tabla EmpleadoObra
 Create Table EmpleadoObra (
