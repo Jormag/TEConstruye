@@ -32,12 +32,12 @@ Go
 
 -- Creación de la tabla Empleado
 Create Table Empleado (
+Cedula int  Primary Key Not Null,
 Nombre Varchar(20) Not Null,
 Apellido1 Varchar(20) Not Null,
 Apellido2 Varchar(20) Not Null,
-Cedula int  Primary Key Not Null,
 Telefono int Not Null,
-PagoHora int Not Null
+PagoHora money Not Null
 )
 Go
 
@@ -103,7 +103,7 @@ IDEmpleado int Not Null,
 IDObra int Not Null,
 Horas int Not Null,
 Fecha date Not Null,
-PagoTrabajador int Not Null,
+PagoTrabajador money Not Null,
 Primary Key (IDEmpleado, IDObra)
 )
 Go
