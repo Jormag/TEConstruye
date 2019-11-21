@@ -127,23 +127,22 @@ Estado bit Default 0
 )
 Go
 
--- Creación de la tabla DetalleFactura
-Create Table DetalleFactura (
-IDDetalleFactura int Not Null Primary Key,
-IDFactura int Not Null,
-IDProducto int Not Null,
-Cantidad varchar(50) Not Null,
-Neto money Not Null,
-Estado bit Default 0
-)
-Go
-
 -- Creación de la tabla Material
 Create Table Material (
 Codigo int Identity Primary Key Not Null,
 Nombre Varchar(50) Not Null,
 Unidad Varchar(20) Not Null,
 PrecioUnitario money Not Null,
+Estado bit Default 0
+)
+Go
+
+-- Creación de la tabla DetalleFactura
+Create Table DetalleFactura (
+IDDetalleFactura int Not Null  Identity Primary Key,
+IDFactura int Not Null,
+IDProducto int Not Null,
+Neto money,
 Estado bit Default 0
 )
 Go
