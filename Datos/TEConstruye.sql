@@ -113,7 +113,7 @@ Create Table Gasto (
 IDObra int Not Null,
 Proveedor varchar(30) Not Null,
 IDFactura int Not Null,
-Foto image, 
+Foto image
 )
 Go
 
