@@ -1,5 +1,4 @@
 Select * From Cliente
-Select * From DetalleFactura
 Select * From Empleado
 Select * From EmpleadoObra
 Select * From Especialidad
@@ -10,5 +9,7 @@ Select * From Gasto
 Select * From Ingeniero
 Select * From Material
 Select * From Obra
-Select * From ObraMateriales
+Select * From EtapaMateriales
 Select * From Ubicacion
+Select * From Proveedor
+Select * From FacturaMateriales
