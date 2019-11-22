@@ -1,5 +1,5 @@
---Create Database TEConstruye
---Go 
+Create Database TEConstruye
+Go 
 
 
 --CREACIÓN DE TABLAS
@@ -68,7 +68,7 @@ AreaLote int Not Null,
 IDIngeniero1 int Not Null,
 IDIngeniero2 int,
 IDIngeniero3 int,
-IDCliente int Not Null
+IDCliente varchar(30) Not Null
 )
 Go
 
@@ -150,6 +150,8 @@ Primary Key (IDFactura, IDProducto)
 )
 Go
 
+
+
 -- CREACIÓN DE LLAVES FORÁNEAS
 
 -- Creacion de las FK de la tabla Ingeniero
@@ -197,6 +199,7 @@ Add Constraint FK_Factura_Obra Foreign Key (IDObra) References Obra(IDObra),
 ALTER TABLE FacturaMateriales
 Add Constraint FK_Factura_Factura Foreign Key (IDFactura) References Factura(IDFactura),
   Constraint FK_Producto_Factura Foreign Key (IDProducto) References Material(Codigo) ;
-
-
+  
+  
+  
 
