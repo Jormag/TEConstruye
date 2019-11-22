@@ -2,10 +2,8 @@ Go
 -- Creacion de tablas
 -- CREACIÓN DE LA TABLA CLIENTE
 Create Table Cliente (
-Cedula int Primary Key Not Null,
-Nombre Varchar(20) Not Null,
-Apellido1 Varchar(20) Not Null,
-Apellido2 Varchar(20) Not Null,
+Cedula varchar(30) Primary Key Not Null,
+Nombre Varchar(100) Not Null,
 Telefono int Not Null,
 FechaNacimiento DATE,
 Nacionalidad VARCHAR (30),
@@ -26,9 +24,9 @@ Nombre VARCHAR (200) NOT NULL,
 Ubicacion INT NOT NULL,
 Habitaciones INT NOT NULL,
 Banos INT NOT NULL,
-AreaTerreno INT NOT NULL,
+AreaLote INT NOT NULL,
 AreaConstruccion INT NOT NULL,
-Dueno INT NOT NULL,
+Dueno Varchar(30) NOT NULL,
 Descripcion VARCHAR (300),
 TipoInmueble INT,
 TipoPiso INT,
@@ -52,8 +50,8 @@ Add Constraint FK_Propiedad_Cliente Foreign Key (Dueno) References [dbo].[Client
 
 -- Inserciones de Prueba
 
-Insert into Cliente(Cedula,Nombre,Apellido1,Apellido2,Telefono,FechaNacimiento,Nacionalidad,Ubicacion,Ingresos,Ocupacion,Correo,Perfil,Usuario,Contrasena)
-Values (202530348,'Jorge','Marin','Aguilar',85832412,'2019-11-19','Costarricense',1,1,1,'example@gmail.com',1,'Jorge123','Password');
+Insert into Cliente(Cedula,Nombre,Telefono,FechaNacimiento,Nacionalidad,Ubicacion,Ingresos,Ocupacion,Correo,Perfil,Usuario,Contrasena)
+Values ('2-253-348','Jorge Marin Aguilar',85832412,'2019-11-19','Costarricense',1,1,1,'example@gmail.com',1,'Jorge123','Password');
 
-Insert into Propiedad(Nombre,Ubicacion,Habitaciones ,Banos,AreaTerreno ,AreaConstruccion, Dueno, Descripcion,TipoInmueble,TipoPiso,Parqueos ,Gimnasio ,Piscina ,ParqueoVisitas,Precio,Foto1 ,Foto2,Foto3,Foto4,Foto5)
-Values ('Apartas Tec', 90, 20, 5, 1000, 900, 202530348, 'ASDCVDSFDGSGFFGDFGD', 1, 1, 1, 'Si', 'No', 'Si', 1, 'sample string 12', 'sample string 13', 'sample string 14', 'sample string 15', 'sample string 16');
+Insert into Propiedad(Nombre,Ubicacion,Habitaciones ,Banos,AreaLote ,AreaConstruccion, Dueno, Descripcion,TipoInmueble,TipoPiso,Parqueos ,Gimnasio ,Piscina ,ParqueoVisitas,Precio,Foto1 ,Foto2,Foto3,Foto4,Foto5)
+Values ('Apartas Tec', 90, 20, 5, 1000, 900, '2-253-348', 'ASDCVDSFDGSGFFGDFGD', 1, 1, 1, 'Si', 'No', 'Si', 1, 'sample string 12', 'sample string 13', 'sample string 14', 'sample string 15', 'sample string 16');
