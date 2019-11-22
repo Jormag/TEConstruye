@@ -1,61 +1,50 @@
-Go 
--- Creacion de tablas
--- Creaci贸n de la tabla Especialidad
+--Create Database TEConstruye
+--Go 
+
+
+--CREACI覰 DE TABLAS
+-- Creaci髇 de la tabla Especialidad
 Create Table Especialidad(
 IDEspecialidad int Identity Primary Key Not Null,
-TipoEspecialidad Varchar(20) NOT NULL
-);
+TipoEspecialidad Varchar(30) Not Null
+)
 Go
 
--- Creaci贸n de la tabla Ingeniero
+-- Creaci髇 de la tabla Ingeniero
 Create Table Ingeniero (
 Cedula int Not Null,
-Nombre Varchar(20) Not Null,
-Apellido1 Varchar(20) Not Null,
-Apellido2 Varchar(20) Not Null,
+Nombre Varchar(100) Not Null,
 Especialidad int Not Null,
 Telefono int Not Null,
 Codigo int Primary Key Not Null
-);
+)
 Go
 
--- Creaci贸n de la tabla 
+-- Creaci髇 de la tabla Cliente
 Create Table Cliente (
 Cedula int Primary Key Not Null,
-Nombre Varchar(20) Not Null,
-Apellido1 Varchar(20) Not Null,
-Apellido2 Varchar(20) Not Null,
+Nombre Varchar(100) Not Null,
 Telefono int Not Null
-);
+)
 Go
 
--- Creaci贸n de la tabla Empleado
+-- Creaci髇 de la tabla Empleado
 Create Table Empleado (
-Cedula int Primary Key Not Null,
-Nombre Varchar(20) Not Null,
-Apellido1 Varchar(20) Not Null,
-Apellido2 Varchar(20) Not Null,
+Cedula int  Primary Key Not Null,
+Nombre Varchar(100) Not Null,
 Telefono int Not Null,
-PagoHora int Not Null
-);
+PagoHora money Not Null
+)
 Go
 
--- Creaci贸n de la tabla Material
-Create Table Material (
-Codigo int Primary Key Not Null,
-Nombre Varchar(30) Not Null,
-PrecioUnitario int Not Null
-);
-Go
-
--- Creaci贸n de la tabla Etapa
+-- Creaci髇 de la tabla Etapa
 Create Table Etapa (
 IDEtapa int Identity Primary Key Not Null,
-Nombre Varchar(30) Not Null
-);
+Etapa Varchar(50) Not Null
+)
 Go
 
--- Creaci贸n de la tabla Ubicacion
+-- Creaci髇 de la tabla Ubicaci髇
 Create Table Ubicacion(
 IDUbicacion int Identity Primary Key Not Null,
 Provincia Varchar(20) Not Null,
@@ -64,7 +53,7 @@ Distrito Varchar(50) Not Null
 );
 Go
 
--- Creaci贸n de la tabla Obra
+-- Creaci髇 de la tabla Obra
 Create Table Obra (
 IDObra int Identity Primary Key Not Null,
 Nombre Varchar(30) Not Null,
@@ -78,70 +67,124 @@ IDIngeniero1 int Not Null,
 IDIngeniero2 int,
 IDIngeniero3 int,
 IDCliente int Not Null
-);
+)
 Go
 
--- Creaci贸n de la tabla EtapaObra
+-- Creaci髇 de la tabla EtapaMateriales
+Create Table EtapaMateriales (
+IDObra int Not Null,
+IDEtapa int Not Null,
+IDMaterial int Not Null, 
+Cantidad int Not Null,
+Primary Key(IDObra,IDEtapa,IDMaterial)
+)
+Go
+
+-- Creaci髇 de la tabla EtapaObra
 Create Table EtapaObra (
 IDObra int Not Null,
 IDEtapa int Not Null,
 FechaInicio date Not Null,
 FechaFin date,
-Presupuesto int NOT NULL,
+Presupuesto money Not Null,
+GastoEtapa money ,
+Descripcion Varchar(200),
 Primary Key (IDObra,IDEtapa)
-);
+)
 Go
 
--- Creaci贸n de la tabla  ObraMateriales
-Create Table EtapaMateriales (
+
+-- Creaci髇 de la tabla EmpleadoObra
+Create Table EmpleadoObra (
+IDEmpleado int Not Null,
+IDObra int Not Null,
+Horas int Not Null,
+Fecha date Not Null,
+PagoTrabajador money,
+)
+Go
+
+-- Creaci髇 de la tabla Gasto
+Create Table Gasto (
+IDObra int Not Null,
+Proveedor varchar(30) Not Null,
+IDFactura int Not Null,
+Foto image
+)
+Go
+
+-- Creaci髇 de la tabla Factura
+Create Table Factura (
+IDFactura int  Identity Primary Key Not Null,
 IDObra int Not Null,
 IDEtapa int Not Null,
-IDMaterial int Not Null, 
-Cantidad int NOT NULL,
-Primary Key(IDObra,IDEtapa,IDMaterial)
-);
+fecha date Not Null,
+)
+Go
+
+-- Creaci髇 de la tabla Material
+Create Table Material (
+Codigo int Identity Primary Key Not Null,
+Nombre Varchar(50) Not Null,
+PrecioUnitario money Not Null,
+)
+Go
+
+-- Creaci髇 de la tablaacturaMateriales
+Create Table FacturaMateriales (
+IDFactura int Not Null,
+IDProducto int Not Null,
+Neto money,
+Primary Key (IDFactura, IDProducto)
+)
 Go
 
 
-
--- Creaci贸n de la tabla EmpleadoObra
-Create Table EmpleadoObra (
-IDEmpleado int NOT NULL,
-IDObra int NOT NULL,
-Fecha date NOT NULL,
-Horas int NOT NULL,
-Primary Key (IDEmpleado, IDObra)
-);
-Go
-
--- Creacion de llaves foraneas
+-- CREACI覰 DE LLAVES FOR罭EAS
 -- Creacion de las FK de la tabla Ingeniero
 ALTER TABLE  Ingeniero
-ADD CONSTRAINT FK_Ingeniero_Especialidad FOREIGN KEY (Especialidad) REFERENCES Especialidad(IDEspecialidad);
+Add Constraint FK_Ingeniero_Especialidad Foreign Key (Especialidad) References Especialidad(IDEspecialidad);
 
 -- Creacion de las FK de la tabla Obra
 ALTER TABLE  Obra
-ADD CONSTRAINT FK_Obra_Ubicacion FOREIGN KEY (Ubicacion) REFERENCES Ubicacion(IDUbicacion),
-	CONSTRAINT FK_Obra_Cliente FOREIGN KEY (IDCliente) REFERENCES Cliente(Cedula),
-	CONSTRAINT FK_Obra_Ingeniero1 FOREIGN KEY (IDIngeniero1) REFERENCES Ingeniero(Codigo),
-	CONSTRAINT FK_Obra_Ingeniero2 FOREIGN KEY (IDIngeniero2) REFERENCES Ingeniero(Codigo),
-	CONSTRAINT FK_Obra_Ingeniero3 FOREIGN KEY (IDIngeniero3) REFERENCES Ingeniero(Codigo);
+Add Constraint FK_Obra_Ubicacion Foreign Key (Ubicacion) References Ubicacion(IDUbicacion),
+	Constraint  FK_Obra_Cliente Foreign Key (IDCliente) References Cliente(Cedula),
+	Constraint  FK_Obra_Ingeniero1 Foreign Key (IDIngeniero1) References Ingeniero(Codigo),
+	Constraint  FK_Obra_Ingeniero2 Foreign Key (IDIngeniero2) References Ingeniero(Codigo),
+	Constraint  FK_Obra_Ingeniero3 Foreign Key (IDIngeniero3) References Ingeniero(Codigo);
 
 -- Creacion de las FK de la tabla EtapaObra
 ALTER TABLE  EtapaObra
-ADD CONSTRAINT FK_EtapaObra_Obra FOREIGN KEY (IDObra) REFERENCES Obra(IDObra),
-	CONSTRAINT FK_EtapaObra_Etapa FOREIGN KEY (IDEtapa) REFERENCES Etapa(IDEtapa);
+Add Constraint FK_EtapaObra_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_EtapaObra_Etapa Foreign Key (IDEtapa) References Etapa(IDEtapa);
 
 -- Creacion de las FK de la tabla EtapaMateriales
 ALTER TABLE  EtapaMateriales
-ADD CONSTRAINT FK_EtapaMateriales_Obra FOREIGN KEY (IDObra) REFERENCES Obra(IDObra),
-	CONSTRAINT FK_EtapaMateriales_Etapa FOREIGN KEY (IDEtapa) REFERENCES Etapa(IDEtapa),
-	CONSTRAINT FK_EtapaMateriales_Material FOREIGN KEY (IDMaterial) REFERENCES Material(Codigo);
+Add Constraint FK_EtapaMateriales_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_EtapaMateriales_Etapa Foreign Key (IDEtapa) References Etapa(IDEtapa),
+	Constraint  FK_EtapaMateriales_Material Foreign Key (IDMaterial) References Material(Codigo);
 
 -- Creacion de las FK de la tabla EmpleadoObra
 ALTER TABLE  EmpleadoObra
-ADD CONSTRAINT FK_EmpleadoObra_Empleado FOREIGN KEY (IDEmpleado) REFERENCES Empleado(Cedula),
-	CONSTRAINT FK_EmpleadoObra_Obra FOREIGN KEY (IDObra) REFERENCES Obra(IDObra);
+Add Constraint FK_EmpleadoObra_Empleado Foreign Key (IDEmpleado) References Empleado(Cedula),
+	Constraint  FK_EmpleadoObra_Obra Foreign Key (IDObra) References Obra(IDObra);
+
+
+-- Creacion de las FK de la tabla Gasto
+ALTER TABLE  Gasto 
+Add Constraint FK_Gasto_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_Gasto_Factura Foreign Key (IDFactura) References Factura(IDFactura);
+
+
+-- Creacion de las FK de la tabla Factura
+ALTER TABLE  Factura 
+Add Constraint FK_Factura_Obra Foreign Key (IDObra) References Obra(IDObra),
+	Constraint  FK_Factura_Etapa Foreign Key (IDEtapa) References Etapa(IDEtapa);
+
+	-- Creacion de las FK de la tabla DetalleFactura
+ALTER TABLE FacturaMateriales
+Add Constraint FK_Factura_Factura Foreign Key (IDFactura) References Factura(IDFactura),
+  Constraint FK_Producto_Factura Foreign Key (IDProducto) References Material(Codigo) ;
 
 
 
