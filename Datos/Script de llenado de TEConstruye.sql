@@ -1,5 +1,3 @@
-USE [TEConstruye]
-GO
 --Insert Proveedor 
 INSERT INTO Proveedor(Nombre)VALUES ('Mini Bodegas del Este')
 INSERT INTO   Proveedor( Nombre )VALUES ('Ferretería Iztarú')
