@@ -13,7 +13,7 @@
       <div class="form-group input-group-lg">
         <!--Contenedor para Ingresar Nombre Material-->
         <label for="Nmaterial"><b>Nombre Material</b>:</label>
-        <input  placeholder="Nombre Material" name="NombreMaterial" [(ngModel)]='objmat.NombreMaterial' #NomobreMaterial="ngModel">
+        <input  placeholder="Nombre Material" name="NombreMaterial" [(ngModel)]='objmat.NombreMaterial' #NombreMaterial="ngModel">
       </div>
     
       <div class="form-group input-group-lg">
@@ -28,11 +28,6 @@
         <input placeholder="Precio Unitario" name="PUnitario" [(ngModel)]='objmat.PUnitario' #PUnitario="ngModel">
       </div>
   
-      <!--<div class="form-group input-group-lg">
-        <!--Contenedor para Ingresar Cantidad
-        <label for="Cantidad"><b>Cantidad</b>:</label>
-        <input placeholder="Cantidad" name="Cantidad" [(ngModel)]='objmat.Cantidad' #Cantidad="ngModel">
-      </div>-->
     </form>
       <!--Boton para Añadir-->
       <button type="submit" class="btn btn-success" (click)="Register(MaterialAdd)" >Añadir</button>

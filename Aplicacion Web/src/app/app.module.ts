@@ -2,6 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { environment } from '../environments/environment';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { VistaprincipalComponent } from './Componentes/vistaprincipal/vistaprincipal.component';
@@ -20,6 +24,8 @@ import { AgregarGastosComponent } from './Componentes/agregar-gastos/agregar-gas
 import { AgregarMaterialesComponent } from './Componentes/agregar-materiales/agregar-materiales.component';
 import { AgregarProyectosComponent } from './Componentes/agregar-proyectos/agregar-proyectos.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditarMaterialComponent } from './Componentes/editar-material/editar-material.component';
+import { EtapasObraComponent } from './Componentes/etapas-obra/etapas-obra.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +45,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AgregarGastosComponent,
     AgregarMaterialesComponent,
     AgregarProyectosComponent,
+    EditarMaterialComponent,
+    EtapasObraComponent,
     
   ],
   imports: [
@@ -47,6 +55,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

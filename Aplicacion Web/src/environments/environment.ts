@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: "AIzaSyDzCV1k_hQ4hYqXd5agaOtK5MDQRKXValM",
+    authDomain: "pruebaguardarimagen.firebaseapp.com",
+    databaseURL: "https://pruebaguardarimagen.firebaseio.com",
+    projectId: "pruebaguardarimagen",
+    storageBucket: "pruebaguardarimagen.appspot.com",
+    messagingSenderId: "290710289346",
+    appId: "1:290710289346:web:11d0d279c1f2d7178b745b",
+    measurementId: "G-8H65ZZ7KTC"
+  }
 };
 
 /*

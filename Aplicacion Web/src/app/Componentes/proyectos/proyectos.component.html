@@ -9,11 +9,16 @@
       <!--División de la Tabla-->
       <th class="hidden">Nombre</th>
       <th>Ubicación</th>
+      <th>Habitaciones</th>
       <th>Baños</th>
-      <th>Tipo Piso</th>
+      <th>Pisos</th>
       <th>Metros Construcción</th>
       <th>Metros Área</th>
-      <th>Habitaciones</th>
+      <th>Ingeniero</th>
+      <th>Ingeniero</th>
+      <th>Ingeniero</th>
+      <th>Cliente</th>
+      
     </tr>
     </thead>
     <tbody>
@@ -22,13 +27,18 @@
       <!--Informacion Tabla-->
       <td>{{user.Nombre}}</td>
       <td>{{user.Ubicacion}}</td>
-      <td>{{user.Banos}}</td>
-      <td>{{user.TipoPiso}}</td>
-      <td>{{user.MetrosConstruccion}}</td>
-      <td>{{user.MetrosArea}}</td>
       <td>{{user.Habitaciones}}</td>
-      <td><button class="btn btn-success" > Eliminar</button>
-        <!--<button class="btn btn-success" style="margin-left: 20px;"> Editar</button></td>-->
+      <td>{{user.Banos}}</td>
+      <td>{{user.Pisos}}</td>
+      <td>{{user.AreaConstruccion}}</td>
+      <td>{{user.AreaLote}}</td>
+      <td>{{user.IDIngeniero1}}</td>
+      <td>{{user.IDIngeniero2}}</td>
+      <td>{{user.IDIngeniero3}}</td>
+      <td>{{user.IDCliente}}</td>
+      
+      <td><button class="btn btn-success" > Eliminar</button></td>
+        <td><button class="btn btn-success" style="margin-left: 20px;"> Editar</button></td>
     </tr>
     </tbody>
   </table>
