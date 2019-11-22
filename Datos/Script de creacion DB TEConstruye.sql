@@ -148,9 +148,6 @@ Primary Key (IDFactura, IDProducto)
 Go
 
 -- CREACIÓN DE LLAVES FORÁNEAS
--- Creacion de las FK de la tabla Gasto
-Alter Table Gasto
-Add Constraint FK_Gasto_Proveedor Foreign Key (Proveedor) References Proveedor (IDProveedor);
 
 -- Creacion de las FK de la tabla Ingeniero
 ALTER TABLE  Ingeniero
@@ -184,7 +181,8 @@ Add Constraint FK_EmpleadoObra_Empleado Foreign Key (IDEmpleado) References Empl
 -- Creacion de las FK de la tabla Gasto
 ALTER TABLE  Gasto 
 Add Constraint FK_Gasto_Obra Foreign Key (IDObra) References Obra(IDObra),
-	Constraint  FK_Gasto_Factura Foreign Key (IDFactura) References Factura(IDFactura);
+	Constraint  FK_Gasto_Factura Foreign Key (IDFactura) References Factura(IDFactura),
+Constraint FK_Gasto_Proveedor Foreign Key (Proveedor) References Proveedor (IDProveedor);
 
 
 -- Creacion de las FK de la tabla Factura
