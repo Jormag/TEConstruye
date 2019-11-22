@@ -2,8 +2,9 @@ USE [TEConstruye]
 GO
 
 INSERT INTO [dbo].[Especialidad] ([TipoEspecialidad]) VALUES ('Ingeniero Civil')
-INSERT INTO [dbo].[Especialidad] ([TipoEspecialidad]) VALUES ('Ingeniero Eléctrico')
-INSERT INTO [dbo].[Especialidad] ([TipoEspecialidad]) VALUES ('Ingeniero en Construcción')
+INSERT INTO [dbo].[Especialidad] ([TipoEspecialidad]) VALUES ('Ingeniero ElÃ©ctrico')
+INSERT INTO [dbo].[Especialidad] ([TipoEspecialidad]) VALUES ('Ingeniero en ConstrucciÃ³n')
+INSERT INTO [dbo].[Especialidad] ([TipoEspecialidad]) VALUES ('Arquitecto')
 GO
 
 
