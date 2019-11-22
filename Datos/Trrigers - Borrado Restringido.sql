@@ -61,16 +61,14 @@ INSTEAD OF DELETE
 AS
 Declare @Codigo int;
 Declare @Nombre varchar(50);
-Declare @Unidad varchar(20);
 Declare @PrecioUnitario money;
-Declare @Estado bit;
+
 
 
 Select @Codigo = D.Codigo From deleted D;
 Select @Nombre = D.Nombre From deleted D;
-Select @Unidad = D.Unidad From deleted D;
 Select @PrecioUnitario = D.PrecioUnitario From deleted D;
-Select @Estado= D.Estado From deleted D;
+
 
 Begin
 		if (@Codigo < 714)
@@ -92,11 +90,11 @@ Create Trigger trgInsteadOfDeleteEtapa on  [dbo].[Etapa]
 INSTEAD OF DELETE
 AS
 Declare @IDEtapa int;
-Declare @Etapa varchar(50);
+Declare @Nombre varchar(50);
 
 
 Select @IDEtapa = D.IDEtapa From deleted D;
-Select @Etapa = D.Etapa From deleted D;
+Select @Nombre = D.Nombre From deleted D;
 
 Begin
 		if (@IDEtapa < 21)
