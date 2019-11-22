@@ -75,6 +75,7 @@ Create Table EtapaMateriales (
 IDObra int Not Null,
 IDEtapa int Not Null,
 IDMaterial int Not Null, 
+PrecioTotal money not null, 
 Cantidad int Not Null,
 Primary Key(IDObra,IDEtapa,IDMaterial)
 )
@@ -87,7 +88,7 @@ IDEtapa int Not Null,
 FechaInicio date Not Null,
 FechaFin date,
 Presupuesto money Not Null,
-GastoEtapa money ,
+GastoEtapa money Not Null,
 Descripcion Varchar(200),
 Primary Key (IDObra,IDEtapa)
 )
@@ -100,18 +101,25 @@ IDEmpleado int Not Null,
 IDObra int Not Null,
 Horas int Not Null,
 Fecha date Not Null,
-PagoTrabajador money,
+PagoTrabajador money not null,
+Primary Key (IDEmpleado, IDObra)
 )
 Go
 
 -- Creación de la tabla Gasto
 Create Table Gasto (
+IDGasto int Identity Primary Key Not Null,
 IDObra int Not Null,
-Proveedor varchar(30) Not Null,
+Proveedor int Not Null,
 IDFactura int Not Null,
-Foto image
+Foto varchar(500)
 )
 Go
+-- Creación de la tabla Proveedor
+Create Table Proveedor (
+IDProveedor int Identity Primary Key Not Null,
+Nombre Varchar(40) not Null
+) Go
 
 -- Creación de la tabla Factura
 Create Table Factura (
@@ -134,13 +142,16 @@ Go
 Create Table FacturaMateriales (
 IDFactura int Not Null,
 IDProducto int Not Null,
-Neto money,
+Neto money Not Null,
 Primary Key (IDFactura, IDProducto)
 )
 Go
 
-
 -- CREACIÓN DE LLAVES FORÁNEAS
+-- Creacion de las FK de la tabla Gasto
+Alter Table Gasto
+Add Constraint FK_Gasto_Proveedor Foreign Key (Proveedor) References Proveedor (IDProveedor);
+
 -- Creacion de las FK de la tabla Ingeniero
 ALTER TABLE  Ingeniero
 Add Constraint FK_Ingeniero_Especialidad Foreign Key (Especialidad) References Especialidad(IDEspecialidad);
