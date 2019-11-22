@@ -139,7 +139,7 @@ PrecioUnitario money Not Null,
 )
 Go
 
--- Creación de la tablaacturaMateriales
+-- Creación de la tabla FacturaMateriales
 Create Table FacturaMateriales (
 IDFactura int Not Null,
 IDMaterial int Not Null,
@@ -193,7 +193,7 @@ ALTER TABLE  Factura
 Add Constraint FK_Factura_Obra Foreign Key (IDObra) References Obra(IDObra),
 	Constraint  FK_Factura_Etapa Foreign Key (IDEtapa) References Etapa(IDEtapa);
 
-	-- Creacion de las FK de la tabla DetalleFactura
+	-- Creacion de las FK de la tabla FacturaMateriales
 ALTER TABLE FacturaMateriales
 Add Constraint FK_Factura_Factura Foreign Key (IDFactura) References Factura(IDFactura),
   Constraint FK_Producto_Factura Foreign Key (IDMaterial) References Material(Codigo) ;
