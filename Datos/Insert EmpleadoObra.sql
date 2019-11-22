@@ -1,12 +1,12 @@
 USE [TEConstruye]
 GO
 
-INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(203698231, 1 ,8 ,'20-08-2019',0)
-INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(203698231, 1 ,9 ,'21-08-2019',0)
-INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(203698231, 1 ,6 ,'22-08-2019',0)
-INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(235641256, 1 ,9 ,'20-08-2019',0)
-INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(235641256, 1 ,8 ,'21-08-2019',0)
-INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(235641256, 1 ,5 ,'22-08-2019',0)
+INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(203698231, 1 ,8 ,'2019-08-20',0)
+INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(203698231, 1 ,9 ,'2019-08-21',0)
+INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(203698231, 1 ,6 ,'2019-08-22',0)
+INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(235641256, 1 ,9 ,'2019-08-20',0)
+INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(235641256, 1 ,8 ,'2019-08-21',0)
+INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(235641256, 1 ,5 ,'2019-08-22',0)
 
 INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(305830690, 2 ,8 ,'2019-04-11',0)
 INSERT INTO [dbo].[EmpleadoObra] ([IDEmpleado],[IDObra],[Horas] ,[Fecha] ,[PagoTrabajador]) VALUES(305830690, 2 ,7 ,'2019-04-12',0)
