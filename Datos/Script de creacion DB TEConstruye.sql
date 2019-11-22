@@ -1,5 +1,5 @@
-Create Database TEConstruye
-Go 
+--Create Database TEConstruye
+--Go 
 
 
 --CREACIÓN DE TABLAS
@@ -24,8 +24,6 @@ Go
 Create Table Cliente (
 Cedula varchar(30) Primary Key Not Null,
 Nombre Varchar(100) Not Null,
-Nacionalidad Varchar(40),
-Correo Varchar(40),
 Telefono int
 )
 Go
@@ -199,6 +197,7 @@ Add Constraint FK_Factura_Obra Foreign Key (IDObra) References Obra(IDObra),
 ALTER TABLE FacturaMateriales
 Add Constraint FK_Factura_Factura Foreign Key (IDFactura) References Factura(IDFactura),
   Constraint FK_Producto_Factura Foreign Key (IDProducto) References Material(Codigo) ;
+  
   
   
   
