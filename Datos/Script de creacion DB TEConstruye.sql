@@ -196,7 +196,7 @@ Add Constraint FK_Factura_Obra Foreign Key (IDObra) References Obra(IDObra),
 	-- Creacion de las FK de la tabla DetalleFactura
 ALTER TABLE FacturaMateriales
 Add Constraint FK_Factura_Factura Foreign Key (IDFactura) References Factura(IDFactura),
-  Constraint FK_Producto_Factura Foreign Key (IDProducto) References Material(Codigo) ;
+  Constraint FK_Producto_Factura Foreign Key (IDMaterial) References Material(Codigo) ;
   
   
   
