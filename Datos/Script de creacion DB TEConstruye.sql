@@ -1,5 +1,5 @@
---Create Database TEConstruye
---Go 
+Create Database TEConstruye
+Go 
 
 
 --CREACIÓN DE TABLAS
@@ -40,7 +40,7 @@ Go
 -- Creación de la tabla Etapa
 Create Table Etapa (
 IDEtapa int Identity Primary Key Not Null,
-Etapa Varchar(50) Not Null
+Nombre Varchar(50) Not Null
 )
 Go
 
@@ -119,7 +119,8 @@ Go
 Create Table Proveedor (
 IDProveedor int Identity Primary Key Not Null,
 Nombre Varchar(40) not Null
-) Go
+) 
+Go
 
 -- Creación de la tabla Factura
 Create Table Factura (
