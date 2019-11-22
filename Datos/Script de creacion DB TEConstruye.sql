@@ -142,9 +142,9 @@ Go
 -- Creación de la tablaacturaMateriales
 Create Table FacturaMateriales (
 IDFactura int Not Null,
-IDProducto int Not Null,
+IDMaterial int Not Null,
 Neto money Not Null,
-Primary Key (IDFactura, IDProducto)
+Primary Key (IDFactura, IDMaterial)
 )
 Go
 
