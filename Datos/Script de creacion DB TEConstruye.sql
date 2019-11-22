@@ -22,9 +22,11 @@ Go
 
 -- Creación de la tabla Cliente
 Create Table Cliente (
-Cedula int Primary Key Not Null,
+Cedula varchar(30) Primary Key Not Null,
 Nombre Varchar(100) Not Null,
-Telefono int Not Null
+Nacionalidad Varchar(40),
+Correo Varchar(40),
+Telefono int
 )
 Go
 
