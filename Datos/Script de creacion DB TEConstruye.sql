@@ -102,7 +102,7 @@ IDObra int Not Null,
 Horas int Not Null,
 Fecha date Not Null,
 PagoTrabajador money not null,
-Primary Key (IDEmpleado, IDObra)
+Primary Key (IDEmpleado, IDObra, Fecha)
 )
 Go
 
