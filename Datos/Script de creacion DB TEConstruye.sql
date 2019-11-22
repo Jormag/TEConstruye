@@ -1,5 +1,5 @@
-Create Database TEConstruye
-Go 
+--Create Database TEConstruye
+--Go 
 
 
 --CREACIÓN DE TABLAS
@@ -127,7 +127,7 @@ Create Table Factura (
 IDFactura int  Identity Primary Key Not Null,
 IDObra int Not Null,
 IDEtapa int Not Null,
-fecha date Not Null,
+Fecha date Not Null,
 )
 Go
 
