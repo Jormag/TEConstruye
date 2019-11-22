@@ -8,40 +8,63 @@
 </div>
 
 <div class="split right">
-<div class="col-md-6 user-container">
+<div class="container">
+    <form #GastosAdd='ngForm' (ngSubmit)="AgregarGasto(GastosAdd)">      
+          
+
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Ingresar Proyecto-->
+              <label for="IDObra"><b>Obra</b>:</label>
+              <input  placeholder="Obra" name="IDObra" [(ngModel)]="objgasto.IDObra" #IDObra="ngModel">
+            </div>
+      
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Ingresar Materiales-->
+            <label for="Proveedor"><b>Proveedor</b>:</label>
+            <input placeholder="Proveedor" name="Proveedor" [(ngModel)]="objgasto.Proveedor" #Provedor="ngModel">
+          </div>
+      
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Ingresar Número de Factura-->
+            <label for="IDFactura"><b>Número Factura</b>:</label>
+            <input placeholder="Número Factura" name="IDFactura" [(ngModel)]="objgasto.IDFactura" #IDFactura="ngModel">
+          </div>
     
-      <div class="form-group">
-        <!--Contenedor para Ingresar Proyecto-->
-        <label for="descripcion"><b>Proyecto</b>:</label>
-        <input  placeholder="Proyecto" [value]="Proyecto" class="form-control" formControlName="Proyecto">
-      </div>
-    
-      <div class="form-group">
-        <!--Contenedor para Ingresar Proveedor-->
-        <label for="descripcion"><b>Proveedor</b>:</label>
-        <input  placeholder="Proveedor" [value]="Provedor" class="form-control" formControlName="Provedor">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Materiales-->
-        <label for="frealcomp"><b>Materiales</b>:</label>
-        <input placeholder="Materiales" [value]="Materiales" class="form-control" formControlName="Materiales">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Número de Factura-->
-        <label for="fregcomp"><b>Número Factura</b>:</label>
-        <input placeholder="Número Factura" [value]="NumeroFactura" class="form-control" formControlName="NumeroFactura">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Imagen Factura-->
-        <label for="proveedor"><b>Imagen Factura</b>:</label>
-        <input  placeholder="Imagen Factura" [value]="ImagenFactura" class="form-control" formControlName="ImagenFactura">
-      </div>
-  
+          <div class="contenedor">
+              <div class="contenedor_formulario">
+                <h5>Elegir Imagen de Factura</h5>
+                <p class="download" *ngIf="finalizado">Archivo Subido <a href="{{ URLPublica }}" target="_blank">Descargar</a></p>
+                <form [formGroup]="archivoForm" (ngSubmit)="subirArchivo()">
+                  <div class="file has-name is-boxed">
+                    <label class="file-label">
+                      <input class="file-input" type="file" formControlName="archivo" (change)="cambioArchivo($event)">
+                      <span class="file-cta">
+                        <span class="file-label">
+                          Elegir un archivo:
+                        </span>
+                      </span>
+                      <span class="file-name">
+                        {{ mensajeArchivo }}
+                      </span>
+                    </label>
+                  </div>
+                  <hr>
+                  
+                  <button [ngClass]="{'button': true, 'is-success': true, 'is-large': true, 'is-loading': porcentaje > 0 && porcentaje < 100}" [disabled]="!archivoForm.valid && (porcentaje > 0 && porcentaje < 100)">Subir archivo</button>
+                </form>
+              </div>
+            </div>
+
+            <div class="form-group input-group-lg">
+                <!--Contenedor para Telefono-->
+                <label for="Foto"><b>Foto</b>:</label>
+                <input  placeholder="Foto" name="Foto" [(ngModel)]="objgasto.Foto" #Foto="ngModel">
+              </div>
+
+    </form>
+      
       <!--Boton para Añadir-->
-      <button class="btn btn-success" [routerLink]="'/empleados'">Añadir</button>
+      <button type="submit" class="btn btn-success" (click)="AgregarGasto(GastosAdd)">Añadir</button>
     
   </div>
   </div>

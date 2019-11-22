@@ -7,11 +7,11 @@
     <tr>
       <th></th>
       <!--Division de la Tabla-->
-      <th class="hidden">Proyecto</th>
+      <th class="hidden">Obra</th>
+      
       <th>Proveedor</th>
-      <th>Materiales</th>
-      <th>Número Factura</th>
-      <th>Imagen</th>
+      <th>Factura</th>
+      <th>Foto</th>
       
     </tr>
     </thead>
@@ -19,11 +19,15 @@
     <tr *ngFor="let user of users">
       <td class="hidden"></td>
       <!--Informacion de la Tabla-->
+      
+      <td>{{user.IDObra}}</td>
       <td>{{user.Proveedor}}</td>
-      <td>{{user.NumeroFactura}}</td>
+      <td>{{user.IDFactura}}</td>
       <td>{{user.Foto}}</td>
-        <td><button class="btn btn-success" > Eliminar</button>
-        <!--<button class="btn btn-success" style="margin-left: 20px;"> Editar</button></td>-->
+
+        <td><button class="btn btn-success" > Eliminar</button></td>
+        <td><button class="btn btn-success" style="margin-left: 20px;"> Editar</button></td>
+        
     </tr>
     </tbody>
   </table>

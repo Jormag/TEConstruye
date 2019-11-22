@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingenieros } from 'src/app/elementos.model'
+import { Ingeniero } from 'src/app/elementos.model'
+import { ConexionapiService } from 'src/app/Conexion/conexionapi.service'
 
 @Component({
   selector: 'app-registro-ingenieros-arquitectos',
@@ -8,11 +9,13 @@ import { Ingenieros } from 'src/app/elementos.model'
 })
 export class RegistroIngenierosArquitectosComponent implements OnInit {
 
-  users: Ingenieros []; //= [{Nombre:'Pablo',Apellido1:'Azofeifa',Apellido2:'González',Especialidad:'Computadores',Cedula:702350983,Telefono:89883145} ];
+  users: Ingeniero []; //= [{Nombre:'Pablo',Apellido1:'Azofeifa',Apellido2:'González',Especialidad:'Computadores',Cedula:702350983,Telefono:89883145} ];
 
-  constructor() { }
+  constructor(private dataService: ConexionapiService) { }
 
   ngOnInit() {
+    this.dataService.getIngeniero().subscribe(data => this.users = data);
+    //this.dataService.getIngenieroID(1795).subscribe(data => this.users = [data])
   }
 
 }

@@ -10,49 +10,33 @@
 <div class="split right">
 <div class="col-md-6 user-container">
     
-      <div class="form-group">
-        <!--Contenedor para Ingresar Cédula-->
-        <label for="descripcion"><b>Cédula</b>:</label>
-        <input  placeholder="Cédula" [value]="Cedula" class="form-control" formControlName="Cedula">
-      </div>
-    
-      <div class="form-group">
-        <!--Contenedor para Ingresar Nombre-->
-        <label for="descripcion"><b>Nombre</b>:</label>
-        <input  placeholder="Nombre" [value]="Nombre" class="form-control" formControlName="Nombre">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Primer Apellido-->
-        <label for="frealcomp"><b>Primer Apellido</b>:</label>
-        <input placeholder="Primer Apellido" [value]="PrimerApellido" class="form-control" formControlName="PrimerApellido">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Segundo Apellido-->
-        <label for="fregcomp"><b>Segundo Apellido</b>:</label>
-        <input placeholder="Segundo Apellido" [value]="SegundoApellido" class="form-control" formControlName="SegundoApellido">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Telefono-->
-        <label for="proveedor"><b>Telefono</b>:</label>
-        <input  placeholder="Telefono" [value]="Telefono" class="form-control" formControlName="Telefono">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Pago por Horas-->
-        <label for="foto"><b>Pago por Hora</b></label>
-        <input placeholder="Pago por Hora" [value]="PagoPorHora" class="form-control" formControlName="PagoPorHora">
-      </div>
+    <form #EmpleadoAdd="ngForm" (ngSubmit)="AgregarEmpleado(EmpleadoAdd)">
+        <div class="form-group input-group-lg">
+            <!--Contenedor para Ingresar Cédula-->
+            <label for="Cedula"><b>Cédula</b>:</label>
+            <input  placeholder="Cédula" name="Cedula" [(ngModel)]="objemp.Cedula" #Cedula="ngModel">
+          </div>
+        
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Ingresar Nombre-->
+            <label for="Nombre"><b>Nombre</b>:</label>
+            <input  placeholder="Nombre" name="Nombre" [(ngModel)]="objemp.Nombre" #Nombre="ngModel">
+          </div>
+      
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Telefono-->
+            <label for="Telefono"><b>Telefono</b>:</label>
+            <input  placeholder="Telefono" name="Telefono" [(ngModel)]="objemp.Telefono" #Telefono="ngModel">
+          </div>
 
-      <div class="form-group">
-        <!--Contenedor para Ingresar Horas Laboradas-->
-        <label for="sucursal"><b>Horas Laboradas</b></label>
-        <input type="number" placeholder="Horas Laboradas" [value]="HorasLaboradas" class="form-control" formControlName="HorasLaboradas">
-      </div>
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Telefono-->
+              <label for="PagoHora"><b>Pago por Hora</b>:</label>
+              <input  placeholder="Pago Por Hora" name="PagoHora" [(ngModel)]="objemp.PagoHora" #PagoHora="ngModel">
+          </div>
+    </form>
       <!--Boton para Añadir-->
-      <button class="btn btn-success" [routerLink]="'/empleados'">Añadir</button>
+      <button type="submit" class="btn btn-success" (click)="AgregarEmpleado(EmpleadoAdd)">Añadir</button>
     
   </div>
   </div>

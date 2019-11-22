@@ -2,7 +2,7 @@
 <div class="split left">
   <div class="centered">
     <!--Encabezado de la Pagina-->
-    <h2>Añadir Compras</h2>
+    <h2>Añadir Obra/Proyecto</h2>
     <img class="center"  alt="Responsive image" style="width:300px;height:300px;" src="../../../assets/imagenes/Proyecto.png">
   </div>
 </div>
@@ -10,49 +10,83 @@
 <div class="split right">
 <div class="col-md-6 user-container">
     
-      <div class="form-group">
-        <!--Contenedor para Ingresar ID-->
-        <label for="descripcion"><b>ID</b>:</label>
-        <input  placeholder="Descripción" name="descripcion" class="form-control" id="descripcion">
-      </div>
-    
-      <div class="form-group">
-        <!--Contenedor para Ingresar Descripción-->
-        <label for="descripcion"><b>Descripción</b>:</label>
-        <input  placeholder="Descripción" name="descripcion" class="form-control" id="descripcion">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Fecha Real Compra-->
-        <label for="frealcomp"><b>Fecha Real Compra</b></label>
-        <input type="date"  placeholder="Fecha" name="frealcomp" class="form-control" id="frealcomp">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Fecha Registro Compra-->
-        <label for="fregcomp"><b>Fecha Registro Compra</b></label>
-        <input type="date" placeholder="Fecha" name="fregcomp" class="form-control" id="fregcomp">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Proveedor-->
-        <label for="proveedor"><b>Proveedor</b></label>
-        <input  placeholder="Nombre" name="proveedor" class="form-control" id="proveedor">
-      </div>
-  
-      <div class="form-group">
-        <!--Contenedor para Ingresar Foto-->
-        <label for="foto"><b>Foto</b></label>
-        <input placeholder="Añadir Foto" name="foto" class="form-control" id="foto">
-      </div>
+    <form #ObraAdd="ngForm" (ngSubmit)="AgregarObra(ObraAdd)">
+        <div class="form-group input-group-lg">
+            <!--Contenedor para Ingresar el ID de la Obra-->
+            <label for="IDObra"><b>Obra</b>:</label>
+            <input  placeholder="Obra" name="IDObra" [(ngModel)]="objobra.IDObra" #IDObra="ngModel">
+          </div>
+        
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Ingresar Nombre de la Obra-->
+            <label for="Nombre"><b>Nombre</b>:</label>
+            <input  placeholder="Nombre" name="Nombre" [(ngModel)]="objobra.Nombre" #Nombre="ngModel">
+          </div>
+      
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Ingresar Ubicacion-->
+            <label for="Ubicacion"><b>Ubicacion</b>:</label>
+            <input placeholder="Ubicacion" name="Ubicacion" [(ngModel)]="objobra.Ubicacion" #Ubicacion="ngModel">
+          </div>
+      
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Cantidad de Habitaciones-->
+            <label for="Habitaciones"><b>Habitaciones</b>:</label>
+            <input placeholder="Número de Habitaciones" name="Habitaciones" [(ngModel)]="objobra.SApellido" #Habitaciones="ngModel">
+          </div>
+      
+          <div class="form-group input-group-lg">
+            <!--Contenedor para Cantidad de Baños-->
+            <label for="Banos"><b>Baños</b>:</label>
+            <input  placeholder="Número de Baños" name="Banos" [(ngModel)]="objobra.Banos" #Banos="ngModel">
+          </div>
 
-      <div class="form-group">
-        <!--Contenedor para Ingresar Sucursal-->
-        <label for="sucursal"><b>Sucursal</b></label>
-        <input  placeholder="Sucursal" name="sucursal" class="form-control" id="sucursal">
-      </div>
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Cantidad de Pisos-->
+              <label for="Pisos"><b>Pisos</b>:</label>
+              <input  placeholder="Número de Pisos" name="Pisos" [(ngModel)]="objobra.Pisos" #Pisos="ngModel">
+          </div>
+
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Área Construccion-->
+              <label for="AConstruccion"><b>Área Construccion</b>:</label>
+              <input  placeholder="Área Construccion" name="AConstruccion" [(ngModel)]="objobra.AConstruccion" #AConstruccion="ngModel">
+          </div>
+
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Área Lote-->
+              <label for="ALote"><b>Área Lote</b>:</label>
+              <input  placeholder="Área Lote" name="ALote" [(ngModel)]="objobra.ALote" #ALote="ngModel">
+          </div>
+
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Ingeniero/Arquitecto-->
+              <label for="Ing1"><b>Ingeniero/Arquitecto</b>:</label>
+              <input  placeholder="Ingeniero/Arquitecto" name="Ing1" [(ngModel)]="objobra.Ing1" #Ing1="ngModel">
+          </div>
+
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Ingeniero/Arquitecto-->
+              <label for="Ing2"><b>Ingeniero/Arquitecto</b>:</label>
+              <input  placeholder="Ingeniero/Arquitecto" name="Ing2" [(ngModel)]="objobra.Ing2" #Ing3="ngModel">
+          </div>
+
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Ingeniero/Arquitecto-->
+              <label for="Ing3"><b>Ingeniero/Arquitecto</b>:</label>
+              <input  placeholder="Ingeniero/Arquitecto" name="Ing3" [(ngModel)]="objobra.Ing3" #Ing3="ngModel">
+          </div>
+
+          <div class="form-group input-group-lg">
+              <!--Contenedor para Cliente-->
+              <label for="IDCliente"><b>Cliente</b>:</label>
+              <input  placeholder="Cliente" name="IDCliente" [(ngModel)]="objobra.IDCliente" #IDCliente="ngModel">
+          </div>
+
+
+    </form>
       <!--Boton para Añadir-->
-      <button class="btn btn-success" [routerLink]="'/proyectos'">Añadir</button>
+      <button type="submit" class="btn btn-success" (click)="AgregarObra(ObraAdd)">Añadir</button>
     
   </div>
   </div>

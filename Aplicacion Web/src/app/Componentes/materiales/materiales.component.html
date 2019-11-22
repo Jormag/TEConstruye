@@ -22,7 +22,7 @@
       <td>{{user.Codigo}}</td>
       <td>{{user.PrecioUnitario}}</td>
       
-        <td><button type="button" class="btn btn-success" > Eliminar</button></td>
+        <td><button type="button" class="btn btn-success" (click)="EliminarMaterial()"> Eliminar</button></td>
         <td><button class="btn btn-success" style="margin-left: 20px;" (click)="getIndividual(user.Codigo)"> Editar</button></td>
     </tr>
     </tbody>
