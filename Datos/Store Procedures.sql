@@ -134,5 +134,22 @@ as Select * From Proveedor
 Create Procedure getUbicacion
 as Select * From Ubicacion
 
+--Store Procedure update Empleado Obra
+Create Procedure updateEmpleadoObra
+as
+begin
+Update EmpleadoObra
+Set PagoTrabajador = Horas * PagoHora
+From
+EmpleadoObra Inner Join Empleado On Empleado.Cedula = EmpleadoObra.IDEmpleado
+end 
 
-
+--Store Procedure update EtapaMateriales
+Create Procedure updateEtapaMateriales
+as
+begin
+Update EtapaMateriales
+Set PrecioTotal = Cantidad * PrecioUnitario
+From
+EtapaMateriales Inner Join Material On Material.Codigo = EtapaMateriales.IDMaterial
+end
