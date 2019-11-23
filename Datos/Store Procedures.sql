@@ -153,3 +153,16 @@ Set PrecioTotal = Cantidad * PrecioUnitario
 From
 EtapaMateriales Inner Join Material On Material.Codigo = EtapaMateriales.IDMaterial
 end
+
+
+Create Procedure getEtapaObraReport
+as Select Obra.Nombre as Obra, Etapa.Nombre as Etapa, EtapaObra.FechaInicio,
+EtapaObra.Presupuesto, EtapaObra.GastoEtapa, EtapaObra.Descripcion
+from EtapaObra
+Inner Join Obra On Obra.IDObra = EtapaObra.IDObra
+Inner Join Etapa On Etapa.IDEtapa = EtapaObra.IDEtapa
+Where EtapaObra.IDObra = 3 --numero de la obra
+
+
+
+
