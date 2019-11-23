@@ -61,7 +61,7 @@ Values ('Apartas Tec', 90, 20, 5, 1000, 900, '2-253-348', 'ASDCVDSFDGSGFFGDFGD',
 
 
 
-USE TECres
-INSERT INTO Cliente(Nombre, Cedula, Nacionalidad)
-SELECT * INTO Cliente from OPENROWSET(' Database=C:\Users\yenma\Downloads\Cliente.xlsx', [Worksheet$]) ;
-Go
+--USE TECres
+--INSERT INTO Cliente(Nombre, Cedula, Nacionalidad)
+--SELECT * INTO Cliente from OPENROWSET(' Database=C:\Users\yenma\Downloads\Cliente.xlsx', [Worksheet$]) ;
+--Go
